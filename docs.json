@@ -1,0 +1,687 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "contact": {},
+    "title": "E-Code Backend Test",
+    "version": "1.0.0"
+  },
+  "basePath": "http://localhost:3000",
+  "paths": {
+    "/dosen": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Mendapat semua dosen",
+        "operationId": "mendapatSemuaDosen",
+        "summary": "Mendapat semua dosen"
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "alamat": {
+                  "example": "Pake nanya",
+                  "type": "string"
+                },
+                "nama_lengkap": {
+                  "example": "Kadal gurun",
+                  "type": "string"
+                },
+                "nid": {
+                  "example": "1293712937129",
+                  "type": "string"
+                },
+                "tanggal_lahir": {
+                  "example": "1995-07-20",
+                  "type": "string"
+                },
+                "telepon": {
+                  "example": "081456789012",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Menambah dosen baru",
+        "operationId": "menambahDosenBaru",
+        "summary": "Menambah dosen baru"
+      }
+    },
+    "/dosen/0G7WJV78LD7": {
+      "delete": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Hapus dosen",
+        "operationId": "hapusDosen",
+        "summary": "Hapus dosen"
+      },
+      "patch": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "nama_lengkap": {
+                  "example": "Kadal Terbang",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Edit data dosen",
+        "operationId": "editDataDosen",
+        "summary": "Edit data dosen"
+      }
+    },
+    "/dosen/320NGP8G1N0": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Mendapat detail dosen",
+        "operationId": "mendapatDetailDosen",
+        "summary": "Mendapat detail dosen"
+      }
+    },
+    "/kelas": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Mendapat semua kelas",
+        "operationId": "mendapatSemuaKelas",
+        "summary": "Mendapat semua kelas"
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "id_wali": {
+                  "example": "320NGP8G1N0",
+                  "type": "string"
+                },
+                "tahun": {
+                  "example": "2023",
+                  "type": "string"
+                },
+                "tanggal_dibuat": {
+                  "example": "2023-01-15T08:30:00Z",
+                  "type": "string"
+                },
+                "tanggal_diubah": {
+                  "example": "2023-01-15T08:30:00Z",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Menambah kelas baru",
+        "operationId": "menambahKelasBaru",
+        "summary": "Menambah kelas baru"
+      }
+    },
+    "/kelas/AFT5O9V1N0W": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Mendapat detail kelas",
+        "operationId": "mendapatDetailKelas",
+        "summary": "Mendapat detail kelas"
+      },
+      "patch": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "tahun": {
+                  "example": "2022",
+                  "type": "string"
+                },
+                "tanggal_dibuat": {
+                  "example": "2022-12-10T14:45:00Z",
+                  "type": "string"
+                },
+                "tanggal_diubah": {
+                  "example": "2022-12-10T14:45:00Z",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Edit data kelas",
+        "operationId": "editDataKelas",
+        "summary": "Edit data kelas"
+      }
+    },
+    "/kelas/ZMVQJGZVF4V": {
+      "delete": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Hapus kelas",
+        "operationId": "hapusKelas",
+        "summary": "Hapus kelas"
+      }
+    },
+    "/mahasiswa": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Mendapat semua mahasiswa",
+        "operationId": "mendapatSemuaMahasiswa",
+        "summary": "Mendapat semua mahasiswa"
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "alamat": {
+                  "example": "Jl. Pemuda No. 40, Makassar",
+                  "type": "string"
+                },
+                "id_kelas": {
+                  "example": "QTOMF9W3HR2",
+                  "type": "string"
+                },
+                "nama_lengkap": {
+                  "example": "Irfan Nugroho",
+                  "type": "string"
+                },
+                "nrp": {
+                  "example": "373839404",
+                  "type": "string"
+                },
+                "tanggal_lahir": {
+                  "example": "1996-09-08",
+                  "type": "string"
+                },
+                "telepon": {
+                  "example": "083738394041",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Menambah mahasiswa baru",
+        "operationId": "menambahMahasiswaBaru",
+        "summary": "Menambah mahasiswa baru"
+      }
+    },
+    "/mahasiswa/BG9T1A308OO": {
+      "delete": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "alamat": {
+                  "example": "Jl. Brantas No. 16, Jombang",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Hapus mahasiswa",
+        "operationId": "hapusMahasiswa",
+        "summary": "Hapus mahasiswa"
+      }
+    },
+    "/mahasiswa/J6EETFJAWO8": {
+      "patch": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "alamat": {
+                  "example": "Jl. Brantas No. 16, Jombang",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Mendapat detail mahasiswa Copy",
+        "operationId": "mendapatDetailMahasiswaCopy",
+        "summary": "Mendapat detail mahasiswa Copy"
+      }
+    },
+    "/mahasiswa/XESARBP9DXQ": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "alamat": {
+                  "example": "Jl. Pemuda No. 40, Makassar",
+                  "type": "string"
+                },
+                "id_kelas": {
+                  "example": "QTOMF9W3HR2",
+                  "type": "string"
+                },
+                "nama_lengkap": {
+                  "example": "Irfan Nugroho",
+                  "type": "string"
+                },
+                "nrp": {
+                  "example": "373839404",
+                  "type": "string"
+                },
+                "tanggal_lahir": {
+                  "example": "1996-09-08",
+                  "type": "string"
+                },
+                "telepon": {
+                  "example": "083738394041",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Mendapat detail mahasiswa",
+        "operationId": "mendapatDetailMahasiswa",
+        "summary": "Mendapat detail mahasiswa"
+      }
+    },
+    "/mata-kuliah": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "id_kelas": {
+                  "example": "AFT5O9V1N0W",
+                  "type": "string"
+                },
+                "id_pengampu": {
+                  "example": "320NGP8G1N0",
+                  "type": "string"
+                },
+                "judul": {
+                  "example": "Matematika Dasar",
+                  "type": "string"
+                },
+                "kdmk": {
+                  "example": "MK101",
+                  "type": "string"
+                },
+                "sks": {
+                  "example": 3,
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Mendapat semua mata kuliah",
+        "operationId": "mendapatSemuaMataKuliah",
+        "summary": "Mendapat semua mata kuliah"
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "id_kelas": {
+                  "example": "AFT5O9V1N0W",
+                  "type": "string"
+                },
+                "id_pengampu": {
+                  "example": "320NGP8G1N0",
+                  "type": "string"
+                },
+                "judul": {
+                  "example": "Statistika",
+                  "type": "string"
+                },
+                "kdmk": {
+                  "example": "MK109",
+                  "type": "string"
+                },
+                "sks": {
+                  "example": 3,
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Menambah mata kuliah baru",
+        "operationId": "menambahMataKuliahBaru",
+        "summary": "Menambah mata kuliah baru"
+      }
+    },
+    "/mata-kuliah/8BLBJW6RK53": {
+      "delete": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Hapus mata kuliah",
+        "operationId": "hapusMataKuliah",
+        "summary": "Hapus mata kuliah"
+      }
+    },
+    "/mata-kuliah/G7K68YY4ZM2": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Mendapat detail mata kuliah",
+        "operationId": "mendapatDetailMataKuliah",
+        "summary": "Mendapat detail mata kuliah"
+      },
+      "patch": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "judul": {
+                  "example": "Logika dan Algoritma",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Update mata kuliah",
+        "operationId": "updateMataKuliah",
+        "summary": "Update mata kuliah"
+      }
+    },
+    "/rapor": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "id_kelas": {
+                  "example": "AFT5O9V1N0W",
+                  "type": "string"
+                },
+                "id_pengampu": {
+                  "example": "320NGP8G1N0",
+                  "type": "string"
+                },
+                "judul": {
+                  "example": "Matematika Dasar",
+                  "type": "string"
+                },
+                "kdmk": {
+                  "example": "MK101",
+                  "type": "string"
+                },
+                "sks": {
+                  "example": 3,
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Mendapat semua rapor",
+        "operationId": "mendapatSemuaRapor",
+        "summary": "Mendapat semua rapor"
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "id_mahasiswa": {
+                  "example": "ZWHQ03H6HUO",
+                  "type": "string"
+                },
+                "id_mata_kuliah": {
+                  "example": "IXHZFTYYA3D",
+                  "type": "string"
+                },
+                "nilai": {
+                  "example": 93,
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Menambah rapor baru",
+        "operationId": "menambahRaporBaru",
+        "summary": "Menambah rapor baru"
+      }
+    },
+    "/rapor/10VU1FJ5IZP": {
+      "delete": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Hapus rapor",
+        "operationId": "hapusRapor",
+        "summary": "Hapus rapor"
+      },
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Mendapat detail rapor",
+        "operationId": "mendapatDetailRapor",
+        "summary": "Mendapat detail rapor"
+      },
+      "patch": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "nilai": {
+                  "example": 90,
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Update mata kuliah Copy",
+        "operationId": "updateMataKuliahCopy",
+        "summary": "Update mata kuliah Copy"
+      }
+    }
+  },
+  "tags": []
+}

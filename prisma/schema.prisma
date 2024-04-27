@@ -1,0 +1,81 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Dosen {
+  id             String   @id @db.Char(11)
+  nid            String   @unique @db.VarChar(20)
+  nama_lengkap   String   @unique @map("namaLengkap") @db.VarChar(32)
+  alamat         String   @db.VarChar(100)
+  telepon        String   @db.Char(14)
+  tanggal_lahir  DateTime @map("tanggalLahir")
+  tanggal_dibuat DateTime @default(now()) @map("tanggalDibuat")
+  tanggal_diubah DateTime @updatedAt @map("tanggalDiubah")
+
+  mataKuliah MataKuliah[]
+  kelas      Kelas?
+}
+
+model Mahasiswa {
+  id             String   @id @db.Char(11)
+  nrp            String   @unique @db.Char(20)
+  nama_lengkap   String   @unique @map("namaLengkap") @db.VarChar(32)
+  alamat         String   @db.VarChar(100)
+  telepon        String   @db.Char(14)
+  tanggal_lahir  DateTime @map("tanggalLahir")
+  tanggal_dibuat DateTime @default(now()) @map("tanggalDibuat")
+  tanggal_diubah DateTime @updatedAt @map("tanggalDiubah")
+
+  id_kelas String @map("idKelas") @db.Char(11)
+  kelas    Kelas  @relation(fields: [id_kelas], references: [id], onUpdate: Cascade, onDelete: Restrict)
+
+  rapor Rapor[]
+}
+
+model Rapor {
+  id             String   @id @db.Char(11)
+  nilai          Int      @db.TinyInt
+  tanggal_dibuat DateTime @default(now()) @map("tanggalDibuat")
+  tanggal_diubah DateTime @updatedAt @map("tanggalDiubah")
+
+  id_mahasiswa String    @map("id_mahasiswa") @db.Char(11)
+  mahasiswa    Mahasiswa @relation(fields: [id_mahasiswa], references: [id], onUpdate: Cascade, onDelete: Restrict)
+
+  id_mata_kuliah String     @map("idMataKuliah") @db.Char(11)
+  matakuliah     MataKuliah @relation(fields: [id_mata_kuliah], references: [id], onUpdate: Cascade, onDelete: Restrict)
+}
+
+model MataKuliah {
+  id             String   @id @db.Char(11)
+  kdmk           String   @unique @db.VarChar(20)
+  judul          String   @unique @db.VarChar(32)
+  sks            Int      @db.TinyInt
+  tanggal_dibuat DateTime @default(now()) @map("tanggalDibuat")
+  tanggal_diubah DateTime @updatedAt @map("tanggalDiubah")
+
+  id_pengampu String @map("idPengampu") @db.Char(11)
+  dosen       Dosen  @relation(fields: [id_pengampu], references: [id], onUpdate: Cascade, onDelete: Restrict)
+
+  id_kelas String @map("idKelas") @db.Char(11)
+  kelas    Kelas  @relation(fields: [id_kelas], references: [id], onUpdate: Cascade, onDelete: Restrict)
+
+  rapor Rapor[]
+}
+
+model Kelas {
+  id             String   @id @db.Char(11)
+  tahun          String   @db.Char(4)
+  tanggal_dibuat DateTime @default(now()) @map("tanggalDibuat")
+  tanggal_diubah DateTime @updatedAt @map("tanggalDiubah")
+
+  id_wali String @unique @map("idWali") @db.Char(11)
+  dosen   Dosen  @relation(fields: [id_wali], references: [id], onUpdate: Cascade, onDelete: Restrict)
+
+  mataKuliah MataKuliah[]
+  mahasiswa  Mahasiswa[]
+}
